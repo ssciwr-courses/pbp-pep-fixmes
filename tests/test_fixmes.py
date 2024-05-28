@@ -7,8 +7,6 @@ from pathlib import Path
 def test_flake8():
     # Get the repository directory
     current_dir = Path(__file__).resolve().parents[1]
-    # input_file_path = current_dir / ".github" / "workflows" \
-                                #   / "Part1" / "example1.py" # noqa
     input_file_path = current_dir / "chapter1"
     # run flake8 on the example files
     command = "flake8 {}".format(input_file_path)
@@ -30,8 +28,6 @@ def test_german_name():
     # Kreis in example 2
     current_dir = Path(__file__).resolve().parents[1]
     input_file = current_dir / "chapter1" / "example2.py"
-    # input_file = current_dir / ".github" / "workflows" \
-                            #  / "Part1" / "example2.py" # noqa
     # figure out if the word "Kreis" is in the file
     with open(input_file, "r") as f:
         file_content = f.read()
@@ -42,8 +38,6 @@ def test_intrinsic_function():
     # check variable name in example3
     current_dir = Path(__file__).resolve().parents[1]
     input_file = current_dir / "chapter1" / "example3.py"
-    # input_file = current_dir / ".github" / "workflows" \
-                            #  / "Part1" / "example3.py" # noqa
     # make sure the intrinsic "list" function is not used as a variable name
     with open(input_file, "r") as f:
         file_content = f.read()

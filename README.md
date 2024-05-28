@@ -1,2 +1,2 @@
-# pbp-pep-right-or-wrong
-Figure out which answers adhere to PEP 8
+# pbp-pep-fixmes
+Correct the three example files in chapter 1 to adhere to PEP 8 recommendations.
