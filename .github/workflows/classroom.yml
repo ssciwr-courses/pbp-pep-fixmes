@@ -1,6 +1,6 @@
 name: Autograding Tests
 'on':
-- workflow_dispatch
+- push
 - repository_dispatch
 permissions:
   checks: write
@@ -13,8 +13,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: test PEP right or wrong
-      id: test-pep-right-or-wrong
+    - name: check-for-stylistic-errors
+      id: check-for-stylistic-errors
       uses: classroom-resources/autograding-python-grader@v1
       with:
         timeout: 10
@@ -22,6 +22,6 @@ jobs:
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST-PEP-RIGHT-OR-WRONG_RESULTS: "${{steps.test-pep-right-or-wrong.outputs.result}}"
+        CHECK-FOR-STYLISTIC-ERRORS_RESULTS: "${{steps.check-for-stylistic-errors.outputs.result}}"
       with:
-        runners: test-pep-right-or-wrong
+        runners: check-for-stylistic-errors
