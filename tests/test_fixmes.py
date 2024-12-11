@@ -46,9 +46,12 @@ def test_intrinsic_function():
     not_accepted_characters = [" ", ":"]
     failure = 0
     for i in find_list:
-        check_last_character = file_content[i+4]
+        check_last_character = file_content[i + 4]
         if check_last_character in not_accepted_characters:
-            print("Found 'list' as variable name in the file! Please change the variable name.")
+            print(
+                """Found 'list' as variable name in the file!
+                Please change the variable name."""
+            )
             print(file_content[i:i+5])
             failure = 1
     assert failure == 0

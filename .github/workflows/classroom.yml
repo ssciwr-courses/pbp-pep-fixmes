@@ -1,7 +1,8 @@
 name: Autograding Tests
-'on':
-- push
-- repository_dispatch
+on:
+  push:
+  repository_dispatch:
+  workflow_dispatch:
 permissions:
   checks: write
   actions: read
@@ -19,6 +20,7 @@ jobs:
       with:
         timeout: 10
         setup-command: 'pip install flake8'
+        max-score: 3
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
