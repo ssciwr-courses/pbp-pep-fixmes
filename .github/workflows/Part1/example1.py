@@ -2,10 +2,8 @@ import os
 from pathlib import Path
 
 
-
-
 # find all png files in a folder
-def find_files(path: str=None, pattern: str="*.png",
+def find_files(path: str = None, pattern: str = "*.png",
                limit: int = 20) -> list:
     """Find image files on the file system.
 
@@ -32,6 +30,7 @@ def find_files(path: str=None, pattern: str="*.png",
 
     return result
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     list_ = find_files(path="./data/")
     print("Found files {}".format(list_))
