@@ -23,7 +23,7 @@ def test_ruff_check():
             print(result.stdout)
             print(f"Please try again for file {file}!")
         elif failure == 0:
-            print("No stylistic errors found!")
+            print(f"No stylistic errors found for file {file}!")
         else:
             print("An error occurred while running ruff!")
         total_failure += failure
