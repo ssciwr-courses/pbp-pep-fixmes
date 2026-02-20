@@ -8,6 +8,7 @@ def test_ruff_check():
     input_file_path = current_dir / "chapter1"
     # run ruff on the example files one by one and check if there are any stylistic errors
     files = [input_file_path / "example1.py", input_file_path / "example2.py", input_file_path / "example3.py"]
+    total_failure = 0
     for file in files:
         command = f"ruff check --preview {file}"
         failure = 0
@@ -25,7 +26,8 @@ def test_ruff_check():
             print("No stylistic errors found!")
         else:
             print("An error occurred while running ruff!")
-    assert failure == 0
+        total_failure += failure
+    assert total_failure == 0
 
 
 def test_german_name():
